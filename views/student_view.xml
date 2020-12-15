@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--Define view_form_client -->
+        <record id="view_form_student" model="ir.ui.view">
+            <field name="name">student Form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="website" position="after">
+                    <field name="gender"/>
+                    <field name="nationality"/>
+                    <field name="course_id"/>
+                </field>
+
+                <field name="name" position="after">
+                    <label for="is_student" string="Est un etudient ?"/>
+                    <field name="is_student"/>
+                </field>
+
+            </field>
+        </record>
+
+        <!--Define view_tree_client -->
+        <record id="view_tree_student" model="ir.ui.view">
+            <field name="name">student tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="email" position="after">
+                    <field name="gender"/>
+                    <field name="nationality"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

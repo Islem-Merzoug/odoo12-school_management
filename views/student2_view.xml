@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--Define view_form_client -->
+        <record id="view_form_student2" model="ir.ui.view">
+            <field name="name">student2 Form</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <!--Define view_tree_client -->
+        <record id="view_tree_student2" model="ir.ui.view">
+            <field name="name">student2 tree</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Define article_action -->
+        <record model="ir.actions.act_window" id="student2_action">
+            <field name="name">student action</field>
+            <field name="res_model">student.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create new articles Course
+                </p>
+                <p>9IIIIIIIIIIIW !!! :3 xD
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <!--Define view_form_article -->
+        <record id="view_form_article" model="ir.ui.view">
+            <field name="name">article Form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <field name="image_medium" position="before">
+                    <label for="is_course" string="Est une formation ?"/>
+                    <field name="is_course"/>
+                </field>
+            </field>
+        </record>
+
+
+
+        <!--Define article_search -->
+        <record id="view_search_article" model="ir.ui.view">
+            <field name="name">Article Search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='filter_to_sell']" position="after">
+                    <filter name="Course" string="Course" icon="terp-mail-message-new"
+                            domain="[('is_course','=',True)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!--Define article_action -->
+        <record model="ir.actions.act_window" id="article_action">
+            <field name="name">Article</field>
+            <field name="res_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_search_article"/>
+            <field name="domain">[('is_course', '=', True)]</field>
+            <!-- Pour passer une valeur à un champ depuis le contexte if suffit de précéder le nom du champ par `default_`-->
+                <field name="context">{'is_course': True, 'default_type':'product','search_default_Course':1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create new articles Course
+                </p>
+                <p>9IIIIIIIIIIIW !!! :3 xD
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+
+</openerp>
+

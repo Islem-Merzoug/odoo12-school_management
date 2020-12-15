@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+
+    <menuitem id="main_school_menu" name="school"/>
+
+        <menuitem id="sub_school_menu" name="school" parent="main_school_menu"/>
+
+            <menuitem id="courses_menu2" name="Courses" parent="sub_school_menu" action="purchase.product_normal_action_puchased"/>
+<!--            <menuitem id="courses_menu2" name="Courses" parent="sub_school_menu" action="article_action"/>-->
+
+            <menuitem id="classe_menu" name="Classe" parent="sub_school_menu" action="classe_action"/>
+
+            <menuitem id="students_menu2" name="Students2" parent="sub_school_menu" action="student2_action"/>
+<!--            <menuitem id="students_menu"  name="Students"  parent="sub_school_menu" action="base.action_partner_form"  />-->
+
+<!--            <menuitem id="teachers_menu"  name="Teachers"  parent="sub_school_menu" action="base.action_partner_form"  />-->
+
+    </data>
+</odoo>

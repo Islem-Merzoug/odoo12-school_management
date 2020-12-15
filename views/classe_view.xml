@@ -1,0 +1,116 @@
+<odoo>
+    <data>
+        <record id="view_form_classe" model="ir.ui.view">
+            <field name="name">classe Form</field>
+            <field name="model">classe.classe</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="fromm"/>
+                                <field name="too"/>
+                                <field name="service_id"/>
+                            </group>
+                            <group>
+                                <field name="teacher_id"/>
+                                <!--                                <field name="localisation"/>-->
+                                <field name="localisation_id"/>
+                                <field name="availisable_space"/>
+                                <field name="students_ids"/>
+                            </group>
+                        </group>
+
+                        <field name="it_repeats_monthly" invisible="1"/>
+                        <field name="it_repeats_weekly" invisible="1"/>
+                        <field name="it_repeats_daily" invisible="1"/>
+
+                        <group>
+                            <field name="repeats"/>
+
+                            <field name="monthly_dates"
+                                   attrs="{'invisible': [('it_repeats_monthly', '!=', 'monthly')]}"/>
+
+                            <field name="Saturday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                            <field name="Sunday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                            <field name="Monday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                            <field name="tuesday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                        </group>
+
+                        <group>
+                            <field name="wednesday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                            <field name="thursday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+                            <field name="friday"
+                                   attrs="{'invisible': [('it_repeats_weekly', '!=', 'weekly')]}"/>
+
+                        </group>
+
+
+                        <!--                            <group>-->
+                        <!--                                <field name="monthly_dates"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_monthly', '!=', True)],'required': [('it_repeats_monthly', '=', False)]}"/>-->
+
+                        <!--                                <field name="Saturday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                                <field name="Sunday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                                <field name="Monday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                            </group>-->
+                        <!--                            <group>-->
+                        <!--                                <field name="tuesday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                                <field name="wednesday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                                <field name="thursday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                                <field name="friday"-->
+                        <!--                                       attrs="{'invisible': [('it_repeats_weekly', '!=', False)],'required': [('it_repeats_weekly', '=', False)]}"/>-->
+                        <!--                            </group>-->
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_classe" model="ir.ui.view">
+            <field name="name">classe tree</field>
+            <field name="model">classe.classe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fromm"/>
+                    <field name="too"/>
+                    <field name="service_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="classe_action">
+            <field name="name">classe action</field>
+            <field name="res_model">classe.classe</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create new articles classe
+                </p>
+                <p>9IIIIIIIIIIIW !!! :3 xD
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
